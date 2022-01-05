@@ -1,0 +1,35 @@
+﻿@model Student_Management_Sysytem.Models.Class
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Class</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model._Class)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model._Class)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Class_Teacher)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Class_Teacher)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Class_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

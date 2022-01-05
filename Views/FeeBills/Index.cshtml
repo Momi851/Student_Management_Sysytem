@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Student_Management_Sysytem.Models.FeeBill>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Classes._Class)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sections.Section_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Student_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Admission_Fee)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Monthly_Fee)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Classes._Class)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sections.Section_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Student_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Admission_Fee)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Monthly_Fee)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Fee_ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Fee_ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Fee_ID })
+        </td>
+    </tr>
+}
+
+</table>
